@@ -1,0 +1,10 @@
+---
+- name: Update blog md file come from windows obsidian
+  hosts: localhost
+  connection: local
+  roles:
+    - update-blog
+    - build-static
+    - push-to-github
+    
+

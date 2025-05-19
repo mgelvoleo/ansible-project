@@ -1,0 +1,17 @@
+- name: Check for changes in blog root folder
+  command: git status --porcelain
+  args:
+    chdir: /home/mgelvoleo/itlearntv
+  register: git_changes
+  ignore_errors: true
+  
+
+- name: Push to github
+  shell: |
+    git add .
+    git commit -m "update blog"
+    git push origin main
+  args:
+    chdir: /home/mgelvoleo/itlearntv
+  when: git_changes.stdout != ''
+ 

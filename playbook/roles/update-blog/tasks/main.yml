@@ -1,0 +1,9 @@
+---
+- name: Start the blog update
+  shell: rsync -avz /mnt/c/Users/BEDC/Documents/blog/blog/content/*  /home/mgelvoleo/itlearntv/content
+
+- name: Upload the images
+  shell: rsync -avz /mnt/c/Users/BEDC/Documents/blog/blog/images/*  /home/mgelvoleo/itlearntv/static/images
+
+- name: Obsidian to images markdown 
+  shell: python3 /home/mgelvoleo/playbook/scripts/obsidian-to-images-markdown.py

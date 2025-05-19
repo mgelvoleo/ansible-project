@@ -1,0 +1,8 @@
+---
+- name: Install and configure nginx for static website
+  hosts: webservers
+  become: yes
+  remote_user: mgelvoleo
+  roles:
+    - install-webserver
+    

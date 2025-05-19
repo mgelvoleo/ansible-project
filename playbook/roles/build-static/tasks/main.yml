@@ -1,0 +1,3 @@
+---
+- name: Build static website with hugo
+  shell: cd /home/mgelvoleo/itlearntv && hugo
